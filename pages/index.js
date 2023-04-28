@@ -47,7 +47,7 @@ export default function Home() {
     }).then(r => r.json())
     .then((r) => { setTimeout(() => {
       window.location.reload(false);
-  }, 100)
+  }, 10)
 
 })
 
