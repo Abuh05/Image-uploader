@@ -39,9 +39,9 @@ export default function Home() {
       formData.append('file', file);
     }
 
-    formData.append('upload_preset', 'my-uploads');
+    formData.append('upload_preset', 'wedding');
 
-    const data = await fetch('https://api.cloudinary.com/v1_1/[Your Cloudinary Cloud Name]/image/upload', {
+    const data = await fetch('https://api.cloudinary.com/v1_1/dy41gqpdz/image/upload', {
       method: 'POST',
       body: formData
     }).then(r => r.json());
@@ -74,15 +74,15 @@ export default function Home() {
           
           <img src={imageSrc} />
           
-          {imageSrc && !uploadData && (
+          {imageSrc && (
             <p>
               <button>Upload Files</button>
             </p>
           )}
 
-          {uploadData && (
-            <code><pre>{JSON.stringify(uploadData, null, 2)}</pre></code>
-          )}
+          {/* {uploadData && (
+            <code><pre>(uploadData, null, 2)</pre></code>
+          )} */}
         </form>
       </main>
 
