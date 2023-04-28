@@ -44,10 +44,15 @@ export default function Home() {
     const data = await fetch('https://api.cloudinary.com/v1_1/dy41gqpdz/image/upload', {
       method: 'POST',
       body: formData
-    }).then(r => r.json());
+    }).then(r => r.json())
+    .then((r) => { setTimeout(() => {
+      window.location.reload(false);
+  }, 100)
 
-    setImageSrc(data.secure_url);
-    setUploadData(data);
+})
+
+    // setImageSrc(data.secure_url);
+    // setUploadData(data);
   }
 
   return (
